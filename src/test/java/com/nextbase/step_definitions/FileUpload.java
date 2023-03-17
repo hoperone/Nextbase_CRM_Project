@@ -1,5 +1,6 @@
 package com.nextbase.step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -21,8 +22,9 @@ public class FileUpload {
 
     }
 
-    @When("selects three files, each in a supported format \\(.pdf, .txt, .jpeg, .gif, .png, .docx)")
-    public void selects_three_files_each_in_a_supported_format_pdf_txt_jpeg_gif_png_docx() {
+    @When("selects {int} files, each in a supported format \\(.pdf, .txt, .jpeg, .gif, .png, .docx)")
+    public void selects_files_each_in_a_supported_format_pdf_txt_jpeg_gif_png_docx(Integer count) {
+
 
     }
 
@@ -37,4 +39,39 @@ public class FileUpload {
     }
 
 
+    @Given("the user is logged in to the application and is on the file upload page")
+    public void theUserIsLoggedInToTheApplicationAndIsOnTheFileUploadPage() {
+    }
+
+    @When("the user selects {string} picture to upload")
+    public void theUserSelectsPictureToUpload(String arg0) {
+    }
+
+    @Then("the application accepts the picture and begins the upload process")
+    public void theApplicationAcceptsThePictureAndBeginsTheUploadProcess() {
+    }
+
+    @And("the platform displays a progress bar indicating the upload progress")
+    public void thePlatformDisplaysAProgressBarIndicatingTheUploadProgress() {
+    }
+
+    @And("once the upload is complete, the application displays an indication message that the file\\(s) are uploaded")
+    public void onceTheUploadIsCompleteTheApplicationDisplaysAnIndicationMessageThatTheFileSAreUploaded() {
+    }
+
+    @And("the application displays a preview of each uploaded picture")
+    public void theApplicationDisplaysAPreviewOfEachUploadedPicture() {
+    }
+
+    @And("the uploaded file\\(s) is accessible to the user and any other authorized users who can access the uploaded files.")
+    public void theUploadedFileSIsAccessibleToTheUserAndAnyOtherAuthorizedUsersWhoCanAccessTheUploadedFiles() {
+    }
+
+    @When("the user selects {string} file\\(s) to upload")
+    public void theUserSelectsFileSToUpload(String arg0) {
+    }
+
+    @Then("the platform accepts the file\\(s) and begins the upload process")
+    public void thePlatformAcceptsTheFileSAndBeginsTheUploadProcess() {
+    }
 }
