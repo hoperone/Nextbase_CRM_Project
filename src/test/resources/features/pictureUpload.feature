@@ -39,7 +39,7 @@ Feature: Upload Multiple Files
     .png
     .gif
 
-
+@run
   Scenario Outline: : User uploads a file in a different format
     Given the user is logged in to the application and is on the file upload page
     When the user clicks on message tab and clicks the file upload button

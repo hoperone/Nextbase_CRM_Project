@@ -54,6 +54,7 @@ public class FileUpload {
 
     @And("the user selects <filetype> file\\(s) to upload")
     public void theUserSelectsFiletypeFileSToUpload() {
+        System.out.println("gfjghkjhgj");
     }
 
     @Then("the platform accepts the file\\(s) and begins the upload process")
