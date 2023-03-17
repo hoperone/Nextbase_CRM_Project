@@ -15,7 +15,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/nextbase/step_definitions",
-        dryRun = false,
+        dryRun = false, // if true: not executing the step definitions
+                       // if false: executing the step definitions
         tags = "@run"
 )
 public class CukesRunner {

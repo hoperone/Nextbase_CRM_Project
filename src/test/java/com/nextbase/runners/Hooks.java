@@ -6,7 +6,8 @@ import io.cucumber.java.Before;
 public class Hooks {
     @Before
     public void setUp(){
-        System.out.println("Navigate to the web browser");
+
+        String url;
     }
 
     @After
