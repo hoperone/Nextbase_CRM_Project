@@ -5,12 +5,10 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigurationReader {
-       /*
+     /*
  Why did we create ConfigurationReader?
-
 - We created the re-usable .getProperty() utility method in ConfigurationReader class
 - We can call this method in any class and any package when we need to read from configuration.properties file
-
  */
 
     // step1: create the Object of Properties

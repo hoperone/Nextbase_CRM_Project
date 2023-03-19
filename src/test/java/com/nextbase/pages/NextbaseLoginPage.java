@@ -23,15 +23,30 @@ public class NextbaseLoginPage {
 
 
     /**
-     * This method will log in using credentials from:
+     * below methods will log in using credentials from:
      *  configuration.properties
      */
 
-    public void loginWithConfig(){
+
+    public void navigateLogInPage(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("nextbase.url"));
+    }
+
+    public void loginAsHr(){
         userLogin.sendKeys(ConfigurationReader.getProperty("hr.username"));
         userPassword.sendKeys(ConfigurationReader.getProperty("password"));
         loginButton.click();
-
+    }
+    public void loginAsMarketing(){
+        userLogin.sendKeys(ConfigurationReader.getProperty("marketing.username"));
+        userPassword.sendKeys(ConfigurationReader.getProperty("password"));
+        loginButton.click();
     }
 
+    public void loginAsHelpdesk(){
+        userLogin.sendKeys(ConfigurationReader.getProperty("helpdesk.username"));
+        userPassword.sendKeys(ConfigurationReader.getProperty("password"));
+        loginButton.click();
+    }
 }
+
