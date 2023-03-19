@@ -1,19 +1,20 @@
 Feature: Upload Multiple Files
-  User story:  As a user, I should be able to upload files and pictures as messages
+  User story:  As a user, I should be able to upload files When pictures as messages
 
   Background: User is on the login page
 
+    Given User navigates to website
+    When User logs in with "username" and "password"
     Given User loads the file upload page
-    When User clicks on message tab
-    And User clicks on the paper clip icon (Upload files) button
+    When User clicks on "message" tab on activity stream page
+    When User clicks on the "Upload files" button
 
   Scenario Outline: User uploads multiple files of supported formats.
 
 
-    When User inserts 3 types of <files> at the same time in Upload and images box
-    And User clicks on the send button
-    Then User sees all 3 files uploaded in message section of the platform
-
+    When User inserts 3 types of <files> at the same time in Upload When images box
+    When User clicks on the "send" button on stream page
+    Then User sees all 3 files uploaded in message section on stream page
 
     Examples:
 
@@ -25,12 +26,9 @@ Feature: Upload Multiple Files
 
   Scenario Outline: User uploads pictures
 
-    And User selects <picture> picture to upload in Upload and images box
-    Then User sees the platform display a progress bar indicating the upload progress
-    And User clicks on the send button
-    Then User sees uploaded pictures in message section of the platform
-
-
+    When User selects <picture> picture to upload in upload box
+    When User clicks on the "send" button
+    Then User sees uploaded pictures in message section on stream page
 
     Examples:
 
@@ -40,19 +38,18 @@ Feature: Upload Multiple Files
       | .gif    |
 
 
-  Scenario Outline: User inserts files and images into text
-    And User selects <image> image to upload in Upload and images box
-    And User clicks on insert in text box
-    And User selects <files> file to upload
-    And User clicks on insert in text box
-    And User selects <files> file to upload
-    And User clicks on insert in text box
-    Then User sees the image and file(s) in the message field
-    And User removes one file from the message field
-    And User removes the image from the message field
-    And User renames the remaining file in the message field
-    And the user clicks on the send button
-    Then User sees uploaded file in message section of the platform
+  Scenario Outline: User inserts files When images into text
+    When User selects <image> image to upload in Upload box
+    When User selects <files> file to upload
+    When User selects <files> file to upload
+    When User clicks on "insert in text" button on stream page
+    Then User sees the image in the message field
+    Then User sees the files in the message field
+    When User clicks on "remove" button for the file on stream page
+    When User clicks on "remove" button for the image on stream page
+    When User renames the remaining file "UK Map A4" in the message field
+    When User clicks on the "send" button on stream page
+    Then User sees "test" in message section of the platform on stream page
 
 
     Examples:

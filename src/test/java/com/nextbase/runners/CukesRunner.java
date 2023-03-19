@@ -17,7 +17,7 @@ import org.junit.runner.RunWith;
         glue = "com/nextbase/step_definitions",
         dryRun = false, // if true: not executing the step definitions
                        // if false: executing the step definitions
-        tags = "@run"
+        tags = ""
 )
 public class CukesRunner {
 }
