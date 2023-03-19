@@ -3,15 +3,17 @@ Feature: Upload Multiple Files
 
   Background: User is on the login page
 
-    Given the user is on the file upload page
-    When the user clicks on message tab
-    And clicks the file upload button
+    Given User loads the file upload page
+    When User clicks on message tab
+    And User clicks on the paper clip icon (Upload files) button
 
   Scenario Outline: User uploads multiple files of supported formats.
 
-    And selects 3 <files> each in a supported format
-    Then the message section of the platform uploads all three files
-    Then the uploaded files accessible to both the sender and recipient of the message.
+
+    When User inserts 3 types of <files> at the same time in Upload and images box
+    And User clicks on the send button
+    Then User sees all 3 files uploaded in message section of the platform
+
 
     Examples:
 
@@ -23,34 +25,40 @@ Feature: Upload Multiple Files
 
   Scenario Outline: User uploads pictures
 
-    And the user selects <picturetype> picture to upload
-    Then the platform displays a progress bar indicating the upload progress
-    Then once the upload is complete, the application displays an indication message that the file(s) are uploaded
-    Then the application displays a preview of each uploaded picture
-    Then the uploaded file(s) is accessible to the user and any other authorized users who can access the uploaded files.
+    And User selects <picture> picture to upload in Upload and images box
+    Then User sees the platform display a progress bar indicating the upload progress
+    And User clicks on the send button
+    Then User sees uploaded pictures in message section of the platform
+
+
+
+    Examples:
+
+      | picture |
+      | .jpeg   |
+      | .png    |
+      | .gif    |
+
+
+  Scenario Outline: User inserts files and images into text
+    And User selects <image> image to upload in Upload and images box
+    And User clicks on insert in text box
+    And User selects <files> file to upload
+    And User clicks on insert in text box
+    And User selects <files> file to upload
+    And User clicks on insert in text box
+    Then User sees the image and file(s) in the message field
+    And User removes one file from the message field
+    And User removes the image from the message field
+    And User renames the remaining file in the message field
+    And the user clicks on the send button
+    Then User sees uploaded file in message section of the platform
 
 
     Examples:
 
-      | picturetype |
-      | .jpg        |
-      | .png        |
-      | .gif        |
+      | image | files |
+      | .jpeg | .pdf  |
+      |       | .txt  |
 
-  @run
-  Scenario Outline: : User uploads a file in a different format
-    And the user selects <filetype> file(s) to upload
-    Then the platform accepts the file(s) and begins the upload process
-    Then the platform displays a progress bar indicating the upload progress
-    Then once the upload is complete, the application displays an indication message that the file(s) are uploaded
-    Then the uploaded file(s) is accessible to the user and any other authorized users who can access the uploaded files.
 
-    Examples:
-
-      | filetype |
-      | .pdf     |
-      | .jpeg    |
-      | .png     |
-      | .docx    |
-      | .txt     |
-      | .gif     |
