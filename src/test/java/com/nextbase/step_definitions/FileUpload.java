@@ -2,6 +2,7 @@ package com.nextbase.step_definitions;
 
 import com.nextbase.pages.LogInPage;
 import com.nextbase.pages.StreamPage;
+import com.nextbase.utilities.BrowserUtils;
 import com.nextbase.utilities.ConfigurationReader;
 import com.nextbase.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -18,8 +19,7 @@ public class FileUpload {
     }
     @When("User logs in with {string} and {string}")
     public void user_logs_in_with_and(String userLogin, String userPassword) {
-        logInPage.userLogin.sendKeys("hr.username");
-        logInPage.userPassword.sendKeys("password");
+      logInPage.loginAsHr();
     }
     @Given("User loads the file upload page")
     public void user_loads_the_file_upload_page() {
@@ -37,13 +37,18 @@ public class FileUpload {
 
     @When("User inserts following {int} types of files at the same time in Upload When images box")
     public void user_inserts_following_types_of_files_at_the_same_time_in_upload_when_images_box() {
+
         String pathPdf = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\UK Map A4.pdf";
         String pathDoc = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\test.docx";
         String pathText = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\test.txt";
 
         streamPage.uploadFileButton.sendKeys(pathPdf);
+        BrowserUtils.sleep(2);
         streamPage.uploadFileButton.sendKeys(pathDoc);
+        BrowserUtils.sleep(2);
         streamPage.uploadFileButton.sendKeys(pathText);
+
+
 
     }
     @When("User clicks on the {string} button on stream page")
