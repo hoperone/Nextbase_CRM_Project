@@ -18,25 +18,29 @@ public class FileUpload {
     public void user_navigates_to_website() {
         Driver.getDriver().get(ConfigurationReader.getProperty("nextbase.url"));
     }
+
     @When("User logs in with {string} and {string}")
-    public void userLogsInWithAnd(String userLogin, String userPassword) {
-logInPage.userLogin.sendKeys(userLogin);
-logInPage.userPassword.sendKeys(userPassword);
+    public void userLogsInWithAnd(String string1, String string2) {
+        logInPage.userLogin.sendKeys(string1);
+        logInPage.userPassword.sendKeys(string2);
     }
+
     @Given("User loads the file upload page")
     public void user_loads_the_file_upload_page() {
         logInPage.loginButton.click();
-       // WebDriverWait wait = new WebDriverWait( Driver.getDriver(), 10);
-       // wait.until(
-             //   ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='submit']")));
+        // WebDriverWait wait = new WebDriverWait( Driver.getDriver(), 10);
+        // wait.until(
+        //   ExpectedConditions.elementToBeClickable(By.xpath("//input[@type='submit']")));
 
 
     }
+
     @When("User clicks on {string} tab on activity stream page")
     public void user_clicks_on_tab_on_activity_stream_page() {
 
         streamPage.messageTab.click();
     }
+
     @When("User clicks on the {string} button")
     public void user_clicks_on_the_button(String string) {
         streamPage.uploadFilesIcon.click();
@@ -58,10 +62,12 @@ logInPage.userPassword.sendKeys(userPassword);
         streamPage.uploadFileButton.sendKeys(pathText);
 
     }
+
     @When("User clicks on the {string} button on stream page")
     public void user_clicks_on_the_button_on_stream_page(String string) {
 
     }
+
     @Then("User sees all {int} files uploaded in {string} tab on stream page")
     public void user_sees_all_files_uploaded_in_tab_on_stream_page(Integer int1, String string) {
 
@@ -138,8 +144,6 @@ logInPage.userPassword.sendKeys(userPassword);
     public void user_sees_in_message_section_of_the_platform_on_stream_page(String string) {
 
     }
-
-
 
 
 }

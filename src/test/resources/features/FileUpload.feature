@@ -1,10 +1,11 @@
+
 Feature: Upload Multiple Files functionality
   User story:  As a user, I should be able to upload files When pictures as messages
-@wip
+  @wip
   Scenario: User uploads multiple files of supported formats
 
     Given User navigates to website
-    When User logs in with "username" and "password"
+    When User logs in with "helpdesk83@cybertekschool.com" and "UserUser"
     Given User loads the file upload page
     When User clicks on "message" tab on activity stream page
     When User clicks on the "Upload files" button
