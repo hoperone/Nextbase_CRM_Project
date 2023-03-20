@@ -10,7 +10,7 @@ public class StreamPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//span[@class='feed-add-post-form-link feed-add-post-form-link-active']")
+    @FindBy(xpath = "//span[@id='feed-add-post-form-tab-message']")
     public WebElement messageTab;
 
     @FindBy(xpath = "//span[@title='Upload files']")

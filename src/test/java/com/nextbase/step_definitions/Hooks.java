@@ -1,8 +1,8 @@
 package com.nextbase.step_definitions;
 
+import com.nextbase.pages.LogInPage;
 import com.nextbase.utilities.Driver;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -23,11 +23,17 @@ public class Hooks {
 //
 //- The lower the number passed in the order, earlier it will get executed.
 //- The methods will be executed in the order it is specified with numbers.
-
-    // @Before
+    LogInPage logInPage = new LogInPage();
+   /* @BeforeStep
     public void setupScenario() {
-        System.out.println("________________ Setting up browser using cucumber @Before _______________");
-    }
+        Driver.getDriver().get(ConfigurationReader.getProperty("nextbase.url"));
+
+        logInPage.loginAsHr();
+        BrowserUtils.sleep(2);
+        }
+
+    */
+
 
     // We can create more than more @Before, @After, @BeforeStep, @AfterStep
     // If we have multiple versions of the same annotation, we can prioritize the running order using the "order" keyword
@@ -37,11 +43,14 @@ public class Hooks {
         System.out.println("====this will only apply to scenarios with @login tag");
     }
 
-   @Before(value = "@db", order = 0)
+  /* @Before(value = "@db", order = 0)
     public void setupForDatabaseScenarios() {
 
         System.out.println("====this will only apply to scenarios with @db tag");
     }
+
+
+   */
 
     @After
     public void teardownScenario(Scenario scenario) { // keeps track of currently executed scenario
