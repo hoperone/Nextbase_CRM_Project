@@ -1,6 +1,6 @@
 Feature: Upload Multiple Files functionality
   User story:  As a user, I should be able to upload files When pictures as messages
-
+@wip
   Scenario: User uploads multiple files of supported formats
 
     Given User navigates to website

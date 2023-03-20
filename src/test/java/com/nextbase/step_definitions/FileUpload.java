@@ -33,20 +33,22 @@ public class FileUpload {
     public void user_clicks_on_the_button(String string) {
         streamPage.uploadFilesIcon.click();
     }
+
+
     @When("User inserts following {int} types of files at the same time in Upload When images box")
-    public void user_inserts_following_types_of_files_at_the_same_time_in_upload_when_images_box(Integer int1, io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
+    public void user_inserts_following_types_of_files_at_the_same_time_in_upload_when_images_box() {
+        String pathPdf = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\UK Map A4.pdf";
+        String pathDoc = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\test.docx";
+        String pathText = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\test.txt";
+
+        streamPage.uploadFileButton.sendKeys(pathPdf);
+        streamPage.uploadFileButton.sendKeys(pathDoc);
+        streamPage.uploadFileButton.sendKeys(pathText);
 
     }
     @When("User clicks on the {string} button on stream page")
     public void user_clicks_on_the_button_on_stream_page(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
     @Then("User sees all {int} files uploaded in {string} tab on stream page")
     public void user_sees_all_files_uploaded_in_tab_on_stream_page(Integer int1, String string) {
@@ -59,13 +61,7 @@ public class FileUpload {
 
     @When("User selects following pictures to upload in upload box")
     public void user_selects_following_pictures_to_upload_in_upload_box() {
-        String pathPdf = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\UK Map A4.pdf";
-        String pathDoc = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\test.docx";
-        String pathText = "C:\\Users\\nafis\\OneDrive\\Desktop\\images and files\\test.txt";
 
-        streamPage.uploadFileButton.sendKeys(pathPdf);
-        streamPage.uploadFileButton.sendKeys(pathDoc);
-        streamPage.uploadFileButton.sendKeys(pathText);
     }
 
     @Then("User sees uploaded pictures in message section on stream page")
